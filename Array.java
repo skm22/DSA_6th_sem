@@ -70,30 +70,53 @@ public class Array_DSA {
 //
 //    }
 
-    public static void main(String[] args) {
-        int[] arr = {1, 7, 3, 6, 5, 6};
-        int[] left = new int[6];
-        int[] right = new int[6];
-        int curr_sum = 0, ans = -1;
-        for (int i = 0; i < arr.length; i++) {
-            curr_sum += arr[i];
-            left[i] = curr_sum;
-        }
-        curr_sum = 0;
-        for (int i = arr.length - 1; i >= 0; i--) {
-            curr_sum += arr[i];
-            right[i] = curr_sum;
-        }
-        for (int i = 0; i < arr.length; i++) {
-            if (left[i] == right[i]) {
-                ans = i;
-                break;
+//     public static void main(String[] args) {
+//         int[] arr = {1, 7, 3, 6, 5, 6};
+//         int[] left = new int[6];
+//         int[] right = new int[6];
+//         int curr_sum = 0, ans = -1;
+//         for (int i = 0; i < arr.length; i++) {
+//             curr_sum += arr[i];
+//             left[i] = curr_sum;
+//         }
+//         curr_sum = 0;
+//         for (int i = arr.length - 1; i >= 0; i--) {
+//             curr_sum += arr[i];
+//             right[i] = curr_sum;
+//         }
+//         for (int i = 0; i < arr.length; i++) {
+//             if (left[i] == right[i]) {
+//                 ans = i;
+//                 break;
+//             }
+//         }
+//         System.out.println(ans);
+//     }
+
+
+
+  public static void main(String[] args) {
+        int [] arr={2,1,0,1,2,0,0,1,1};
+        int l =0,m=0,h=arr.length-1;
+        while(m <= h){
+            if (arr[m]==0){
+                arr[m]=arr[l];
+                arr[l]=0;
+                m+=1;
+                l+=1;
+            }
+            else if (arr[m]==2){
+                arr[m]=arr[h];
+                arr[h]=2;
+                h-=1;
+            }
+            else{
+                m+=1;
             }
         }
-        System.out.println(ans);
     }
+    
 
-
-}
+ }
 
 
